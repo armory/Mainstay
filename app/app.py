@@ -6,7 +6,7 @@ app = Flask(__name__)
 def hello():
     return "This is the root context!"
 
-@app.route('/text')
+@app.route('/test')
 def test():
     return "This is the test"
 

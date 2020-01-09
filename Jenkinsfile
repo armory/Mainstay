@@ -1,7 +1,7 @@
 node {
     
     def props = [
-        build.number : $BUILD_NUMBER
+        build.number=${BUILD_NUMBER}
     ]
 
     def content = props.collect{entry->entry.key+"="+entry.value}.join('\n')

@@ -1,5 +1,14 @@
 node {
+    
+    def props = [
+        build.number : $BUILD_NUMBER
+    ]
+
+    def content = props.collect{entry->entry.key+"="+entry.value}.join('\n')
+
+    writeFile file: 'image.properties', text: content
     def app
+
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */

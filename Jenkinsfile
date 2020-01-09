@@ -39,6 +39,8 @@ node {
         }
     }
     stage('Create Properties file') {
-        writeFile file: 'image.properties', text: "Build_Number=${env.BUILD_NUMBER}"
+        def content = "Build_Number=${env.BUILD_NUMBER}"
+        writeFile file: 'image.properties', text: content
+    
     }
 }

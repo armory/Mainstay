@@ -35,7 +35,10 @@ node {
         docker.withRegistry('https://registry.hub.docker.com', 'fernando-dockerhub') {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
-            writeFile file: 'image.properties', text: "Build_Number="+${env.BUILD_NUMBER}
+            
         }
+    }
+    stage('Create Properties file') {
+        writeFile file: 'image.properties', text: "Build_Number=${env.BUILD_NUMBER}"
     }
 }

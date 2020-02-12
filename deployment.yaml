@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app: flask-app
-  name: flask-app-demo
+  name: flask-app
   namespace: dev
 spec:
   replicas: 1

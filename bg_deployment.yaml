@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
   labels:
-    app: flask-app
-  name: flask-app
+    app: bg-flask-app
+  name: bg-flask-app
   namespace: dev
 spec:
   replicas: 4
   selector:
     matchLabels:
-      app: flask-app
+      app: bg-flask-app
   template:
     metadata:
       labels:
-        app: flask-app
+        app: bg-flask-app
     spec:
       containers:
         - image: 'cremerfc/flask-app:${trigger["buildInfo"]["number"]}'

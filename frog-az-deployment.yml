@@ -6,7 +6,7 @@ metadata:
   name: flask-app
   namespace: spin-deploy-namespace
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: flask-app

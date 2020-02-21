@@ -4,7 +4,7 @@ metadata:
   labels:
     app: flask-app
   name: flask-app
-  namespace: dev
+  namespace: spin-deploy-namespace
 spec:
   replicas: 4
   selector:
@@ -25,7 +25,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: flask-app-service
-  namespace: dev
+  namespace: spin-deploy-namespace
 spec:
   ports:
     - port: 80

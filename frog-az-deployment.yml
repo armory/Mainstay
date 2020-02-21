@@ -16,10 +16,10 @@ spec:
         app: flask-app
     spec:
       containers:
-        - image: ${trigger['artifacts'][0]['reference']}
-          name: flask-app
-          ports:
-            - containerPort: 5000
+      - image: ${trigger['artifacts'][0]['reference']}
+        name: flask-app
+        ports:
+        - containerPort: 5000
       imagePullSecrets:
       -  name: regcred
 ---

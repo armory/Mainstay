@@ -38,7 +38,7 @@ node {
         /* dockerRegistry =  'https://registry.hub.docker.com'
            dockerCreds = 'fernando-dockerhub'*/
         /* If we are pushing to Artifactory, use this: */
-        dockerRegistry = 'armory-docker-local.jfrog.io'
+        dockerRegistry = 'https://armory-docker-local.jfrog.io'
         dockerCreds = 'fernando-armory-artifactory'
         
         docker.withRegistry(dockerRegistry, dockerCreds ) {

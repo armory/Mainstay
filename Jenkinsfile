@@ -3,6 +3,8 @@ node {
 
     
     def app
+    def dockerRegistry
+    def dockerCreds
 
 
     stage('Clone repository') {
@@ -32,7 +34,14 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        docker.withRegistry('https://registry.hub.docker.com', 'fernando-dockerhub') {
+        /* If we are pushing to docker hub, use this: */
+        /* dockerRegistry =  'https://registry.hub.docker.com'
+           dockerCreds = 'fernando-dockerhub'*/
+        /* If we are pushing to Artifactory, use this: */
+        dockerRegistry = 'armory-docker-local.jfrog.io'
+        dockerCreds = 'fernando-armory-artifactory'
+        
+        docker.withRegistry(dockerRegistry, dockerCreds ) {
             app.push("${env.BUILD_NUMBER}")
             app.push("latest")
             

@@ -1,13 +1,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  annotations:
-    strategy.spinnaker.io/max-version-history: '2'
-    traffic.spinnaker.io/load-balancers: '["service bg-flask-app-service"]'
-  labels:
-    app: bg-flask-app
   name: bg-flask-app
-  namespace: dev
 spec:
   replicas: 4
   selector:

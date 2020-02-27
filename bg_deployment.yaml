@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: bg-flask-app
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: bg-flask-app

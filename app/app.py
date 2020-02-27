@@ -8,7 +8,7 @@ def index():
 
 @app.route('/test')
 def test():
-    return "This is the one test for all!!"
+    return "This is the one test for all!!!!"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')

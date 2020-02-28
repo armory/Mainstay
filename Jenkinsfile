@@ -34,12 +34,12 @@ node {
          * First, the incremental build number from Jenkins
          * Second, the 'latest' tag.
          * Pushing multiple tags is cheap, as all the layers are reused. */
-        /* If we are pushing to docker hub, use this: */
+        /* If we are pushing to docker hub, use this: 
            dockerRegistry =  'https://registry.hub.docker.com'
-           dockerCreds = 'fernando-dockerhub'
-        /* If we are pushing to Artifactory, use this: 
+           dockerCreds = 'fernando-dockerhub'*/
+        /* If we are pushing to Artifactory, use this: */
         dockerRegistry = 'https://armory-docker-local.jfrog.io'
-        dockerCreds = 'fernando-armory-artifactory'*/
+        dockerCreds = 'fernando-armory-artifactory'
         
         docker.withRegistry(dockerRegistry, dockerCreds ) {
             app.push("${env.BUILD_NUMBER}")

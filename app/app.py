@@ -6,14 +6,14 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', methods=['POST'])
 def index():
  #   return render_template('index.html')
 
  #Let's get the JSON Payload
     data = json.loads(request.data)
     content = request.get_json()
-    return content 
+    print (content) 
 
 @app.route('/test')
 def test():

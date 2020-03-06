@@ -14,7 +14,7 @@ def index():
     #data = json.loads(request.data)
     #ontent = request.get_json()
     print (request) 
-    return 'ok'
+    return request
 
 @app.route('/test')
 def test():

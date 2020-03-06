@@ -13,8 +13,12 @@ def index():
  #Let's get the JSON Payload
     #data = json.loads(request.data)
     #ontent = request.get_json()
+    auth_opts = parse_auth_header(request.headers.get('Authorization'))
     print (request.data) 
-    return request.get_json()
+    request_json = request.get_json()
+    output_string = auth_opts + " and " + request_json
+    
+    return  output_string
 
 @app.route('/test')
 def test():

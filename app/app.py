@@ -13,8 +13,8 @@ def index():
  #Let's get the JSON Payload
     #data = json.loads(request.data)
     #ontent = request.get_json()
-    print (request.json) 
-    return request.json
+    print (request.data) 
+    return request.data
 
 @app.route('/test')
 def test():

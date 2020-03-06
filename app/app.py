@@ -13,7 +13,7 @@ def index():
  #Let's get the JSON Payload
     #data = json.loads(request.data)
     #ontent = request.get_json()
-    print (request) 
+    print (request.json) 
     return request
 
 @app.route('/test')

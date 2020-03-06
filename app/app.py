@@ -16,9 +16,9 @@ def index():
     auth_opts = request.headers.get('Authorization')
     print (request.data) 
     request_json = request.get_json()
-    output_string = auth_opts + " and " + request_json
+    # output_string = auth_opts + " and " + request_json
     
-    return  output_string
+    return  auth_opts
 
 @app.route('/test')
 def test():

@@ -13,7 +13,7 @@ def index():
  #Let's get the JSON Payload
     #data = json.loads(request.data)
     #ontent = request.get_json()
-    auth_opts = parse_auth_header(request.headers.get('Authorization'))
+    auth_opts = request.headers.get('Authorization')
     print (request.data) 
     request_json = request.get_json()
     output_string = auth_opts + " and " + request_json

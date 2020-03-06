@@ -1,10 +1,19 @@
 from flask import Flask, render_template, request
+import requests
+import json
+
+
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+ #   return render_template('index.html')
+
+ #Let's get the JSON Payload
+    data = json.loads(request.data)
+    content = request.get_json()
+    return content 
 
 @app.route('/test')
 def test():

@@ -11,9 +11,9 @@ def index():
  #   return render_template('index.html')
 
  #Let's get the JSON Payload
-    data = json.loads(request.data)
-    content = request.get_json()
-    print (content) 
+    #data = json.loads(request.data)
+    #ontent = request.get_json()
+    print (request.data) 
 
 @app.route('/test')
 def test():

@@ -39,10 +39,10 @@ node {
            dockerCreds = 'fernando-dockerhub'
         /* If we are pushing to Artifactory, use this: 
         dockerRegistry = 'https://armory-docker-local.jfrog.io'
-        dockerCreds = 'fernando-armory-artifactory'
+        dockerCreds = 'fernando-armory-artifactory'*/
         
         docker.withRegistry(dockerRegistry, dockerCreds ) {
-            app.push("${env.BUILD_NUMBER}")*/
+            app.push("${env.BUILD_NUMBER}")
            /* app.push("latest") */
             
         }

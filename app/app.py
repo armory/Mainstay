@@ -14,7 +14,8 @@ def index():
         request_json = request.get_json()
     # output_string = auth_opts + " and " + request_json
     
-    return  auth_opts
+    #return  auth_opts
+    return "this is the top context path"
 
 @app.route('/test')
 def test():

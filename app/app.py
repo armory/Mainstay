@@ -6,7 +6,7 @@ import json
 app = Flask(__name__)
 
 
-@app.route('/', methods=['POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
  #   return render_template('index.html')
 

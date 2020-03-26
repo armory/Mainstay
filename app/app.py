@@ -15,7 +15,7 @@ def index():
     # output_string = auth_opts + " and " + request_json
     
     #return  auth_opts
-    return "this is the top context path"
+    return "You have reached Flask-app!"
 
 @app.route('/test')
 def test():

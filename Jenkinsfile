@@ -17,7 +17,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("cremerfc/flask-app")
+        app = docker.build("cremerfc/capone-flask-app")
     }
 
     stage('Test image') {

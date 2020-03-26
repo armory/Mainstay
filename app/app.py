@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     
-    return "You have reached Flask-app! You Win!"
+    return "You have reached Flask-app! Please make yourself at home!"
 
 @app.route('/test')
 def test():

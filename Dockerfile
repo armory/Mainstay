@@ -1,15 +1,15 @@
-FROM ubuntu:18.04
+FROM python:3.8.2-alpine3.11
 
 MAINTAINER Fernando Cremer "cremerfc@gmail.com"
 
-RUN apt-get update -y && \
-    apt-get install -y python3-pip python3-dev
+RUN apk add --update-cache \
+    stress-ng
 
-COPY ./Requirements.txt /Requirements.txt
+COPY ./requirements.txt /requirements.txt
 
 WORKDIR /
 
-RUN pip3 install -r Requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY . /
 

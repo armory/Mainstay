@@ -1,0 +1,7 @@
+sum(rate(container_cpu_usage_seconds_total{id="/ecs/d9146077-d540-4490-b8db-166db1e9ea5a"}[30s])) / sum(container_spec_cpu_shares{id="/ecs/d9146077-d540-4490-b8db-166db1e9ea5a"}/container_spec_cpu_period{id="/ecs/d9146077-d540-4490-b8db-166db1e9ea5a"}) 
+
+sum(rate(container_cpu_usage_seconds_total{name!~".*prometheus.*", image!="", container_label_com_amazonaws_ecs_cluster="se-demo-cluster"}[5m])) by (container_label_com_amazonaws_ecs_task_definition_family, container_label_com_amazonaws_ecs_task_definition_version) / sum(container_spec_cpu_shares{name!~".*prometheus.*", image!="", container_label_com_amazonaws_ecs_cluster="se-demo-cluster"}/container_spec_cpu_period{name!~".*prometheus.*", image!="", container_label_com_amazonaws_ecs_cluster="se-demo-cluster"}) by (container_label_com_amazonaws_ecs_task_definition_family, container_label_com_amazonaws_ecs_task_definition_version)
+
+sum(rate(container_cpu_usage_seconds_total{id="/ecs/d9146077-d540-4490-b8db-166db1e9ea5a"}[30s])) by (id) / sum(container_spec_cpu_shares{id="/ecs/d9146077-d540-4490-b8db-166db1e9ea5a"}/container_spec_cpu_period{id="/ecs/d9146077-d540-4490-b8db-166db1e9ea5a"}) by (id)
+
+

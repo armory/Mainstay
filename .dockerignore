@@ -1,0 +1,7 @@
+.vscode
+venv
+lib
+*.yaml
+*.yml
+Jenkinsfile
+Dockerfile

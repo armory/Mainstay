@@ -5,7 +5,7 @@ MAINTAINER Fernando Cremer "cremerfc@gmail.com"
 RUN apk add --update-cache \
     stress-ng
 
-COPY ./requirements.txt /requirements.txt
+COPY ./Requirements.txt /Requirements.txt
 
 WORKDIR /
 

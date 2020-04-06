@@ -16,7 +16,7 @@ spec:
         app: mainstay
     spec:
       containers:
-        - image: 'cremerfc/flask-app:${buildTag}'
+        - image: 'cremerfc/flask-app:${BuildTag}'
           name: flask-app
           ports:
             - containerPort: 5000

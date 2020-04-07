@@ -40,7 +40,7 @@ def index():
 
 @app.route('/test')
 def test():
-    return "This is the test, are you ready!!!"
+    return "This is the test, are you ready!!!!"
 
 # canary?cpu=2&cpuLoad=25&io=4&memSize=10m&timeout=30s
 @app.route('/canary')

@@ -5,12 +5,22 @@ node {
     def app
     def dockerRegistry
     def dockerCreds
+    parameters {
+        
+        string(name: 'git_commit_hash', defaultValue: 'be86ee7c9ce0c91e12be87bfdfb0a499a465e8de', description: 'Commit hash that triggered pipeline')
+    }
 
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        /*checkout scm*/
+        checkout ([
+            $class: 'GitSCM',
+            branches: [[name: $git_commit_hash ]],
+            userRemoteConfigs: [[
+            url: 'https://github.com/armory/Mainstay.git']]
+                   ])
     }
 
     stage('Build image') {

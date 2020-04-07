@@ -1,23 +1,19 @@
 node {
 
-
-    
     def app
     def dockerRegistry
     def dockerCreds
 
-
-   
-
-    stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
+    stage('Pull image') {
+        /* This pulls the image that was approved */
 
         app = docker.pull("cremerfc/mainstay:4")
     }
 
+  
    
     stage('Push image') {
+    /* Now we will push this one as latest*/
            dockerRegistry =  'https://registry.hub.docker.com'
            dockerCreds = 'fernando-dockerhub'
        
@@ -27,9 +23,5 @@ node {
             
         }
     }
-    stage('Create Properties file') {
-        def content = "Build_Number=${env.BUILD_NUMBER}"
-        writeFile file: 'image.properties', text: content
     
-    }
 }

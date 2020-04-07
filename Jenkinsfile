@@ -17,7 +17,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("cremerfc/capone-flask-app")
+        app = docker.build("cremerfc/mainstay")
     }
 
     stage('Test image') {
@@ -43,7 +43,7 @@ node {
         
         docker.withRegistry(dockerRegistry, dockerCreds ) {
             app.push("${env.BUILD_NUMBER}")
-           /* app.push("latest") */
+            app.push("latest")
             
         }
     }

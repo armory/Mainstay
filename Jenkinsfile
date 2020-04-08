@@ -65,6 +65,6 @@ node {
          ]
          def content = props.collect{entry->entry.key+"="+entry.value}.join('\n')
          writeFile file: 'image.properties', text: content
-        
+    }
         
 }

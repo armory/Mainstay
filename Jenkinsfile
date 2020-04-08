@@ -61,7 +61,7 @@ node {
         
         def dockerDigest = sh "docker inspect --format='{{index .RepoDigests 0}}' registry.hub.docker.com/cremerfc/mainstay:${env.BUILD_NUMBER}"
         def props = [
-            DockerDigest : $dockerDigest 
+            DockerDigest : dockerDigest 
          ]
          def content = props.collect{entry->entry.key+"="+entry.value}.join('\n')
          writeFile file: 'image.properties', text: content

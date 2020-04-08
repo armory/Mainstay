@@ -58,13 +58,13 @@ node {
         }
     }
     stage('Create Properties file') {
-        def content = sh "docker inspect --format='{{index .RepoDigests 0}}' registry.hub.docker.com/cremerfc/mainstay:${env.BUILD_NUMBER}"
-        writeFile file: 'image.properties', text: content
-    
-    }
-    post {
-        always {
-            archiveArtifacts artifacts: 'image.properties', fingerprint: true
-        }
-    }
+        
+        def dockerDigest = sh "docker inspect --format='{{index .RepoDigests 0}}' registry.hub.docker.com/cremerfc/mainstay:${env.BUILD_NUMBER}"
+        def props = [
+            DockerDigest : $dockerDigest 
+         ]
+         def content = props.collect{entry->entry.key+"="+entry.value}.join('\n')
+         writeFile file: 'image.properties', text: content
+        
+        
 }

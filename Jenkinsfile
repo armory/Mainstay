@@ -6,6 +6,9 @@ node {
     def dockerRegistry
     def dockerCreds
     
+    parameters {
+        string(name: 'git_commit_hash', defaultValue: 'default', description: 'Git Commit Hash')
+    }
 
 
     stage('Clone repository') {

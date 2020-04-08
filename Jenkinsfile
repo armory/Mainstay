@@ -5,12 +5,19 @@ node {
     def app
     def dockerRegistry
     def dockerCreds
+    
 
 
     stage('Clone repository') {
         /* Let's make sure we have the repository cloned to our workspace */
 
-        checkout scm
+        /*checkout scm*/
+        checkout ([
+            $class: 'GitSCM',
+            branches: [[name: $git_commit_hash ]],
+            userRemoteConfigs: [[
+            url: 'https://github.com/armory/Mainstay.git']]
+                   ])
     }
 
     stage('Build image') {

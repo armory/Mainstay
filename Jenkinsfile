@@ -58,7 +58,7 @@ node {
         }
     }
     stage('Create Properties file') {
-        def content = sh "docker inspect --format='{{index .RepoDigests 0}}' cremerfc/mainstay:${env.BUILD_NUMBER}"
+        def content = sh "docker inspect --format='{{index .RepoDigests 0}}' registry.hub.docker.com/cremerfc/mainstay:${env.BUILD_NUMBER}"
         writeFile file: 'image.properties', text: content
     
     }

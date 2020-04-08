@@ -5,10 +5,7 @@ node {
     def app
     def dockerRegistry
     def dockerCreds
-    parameters {
-        
-        string(name: 'git_commit_hash', defaultValue: 'be86ee7c9ce0c91e12be87bfdfb0a499a465e8de', description: 'Commit hash that triggered pipeline')
-    }
+    
 
 
     stage('Clone repository') {

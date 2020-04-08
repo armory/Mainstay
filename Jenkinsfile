@@ -17,7 +17,7 @@ node {
         /*checkout scm*/
         checkout ([
             $class: 'GitSCM',
-            branches: [[name: ${params.git_commit_hash} ]],
+            branches: [[name: "${params.git_commit_hash}" ]],
             userRemoteConfigs: [[
             url: 'https://github.com/armory/Mainstay.git']]
                    ])

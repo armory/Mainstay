@@ -62,4 +62,9 @@ node {
         writeFile file: 'image.properties', text: content
     
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'image.properties', fingerprint: true
+        }
+    }
 }

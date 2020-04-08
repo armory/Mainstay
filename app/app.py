@@ -42,6 +42,10 @@ def index():
 def test():
     return "This is the test, are you ready!!!!"
 
+@app.route('/db')
+def dbWork():
+    return "This is where we could call a database"
+
 # canary?cpu=2&cpuLoad=25&io=4&memSize=10m&timeout=30s
 @app.route('/canary')
 def canary():

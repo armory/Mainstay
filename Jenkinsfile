@@ -58,7 +58,7 @@ node {
         }
     }
     stage('Create Properties file ') {
-        sh 'echo "DIGEST=\$(docker inspect --format='{{index .RepoDigests 0}}' registry.hub.docker.com/cremerfc/mainstay:"+ "${env.BUILD_NUMBER}"+")">image.properties'
+        sh 'echo "DIGEST=\$(docker inspect --format=\'{{index .RepoDigests 0}}\' registry.hub.docker.com/cremerfc/mainstay:"+ "${env.BUILD_NUMBER}"+")">image.properties'
         
         
       

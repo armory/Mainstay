@@ -60,10 +60,8 @@ node {
     stage('Create Properties file') {
         
         def dockerDigest = sh "docker inspect --format='{{index .RepoDigests 0}}' registry.hub.docker.com/cremerfc/mainstay:${env.BUILD_NUMBER}"
-        def props = [
-            DockerDigest : dockerDigest 
-         ]
-         def content = props.collect{entry->entry.key+"="+entry.value}.join('\n')
+        def content = "DockerDigest=" + dockerDigest 
+      
          writeFile file: 'image.properties', text: content
         
         /* Archive File*/

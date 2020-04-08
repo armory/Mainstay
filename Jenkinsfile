@@ -58,7 +58,7 @@ node {
         }
     }
     stage('Create Properties file') {
-        sh "docker inspect --format='{{index .RepoDigests 0}}' cremerfc/mainstay:${env.BUILD_NUMBER}) > image.properties"
+        sh "docker inspect --format='{{index .RepoDigests 0}}' cremerfc/mainstay:${env.BUILD_NUMBER} > image.properties"
         
       
         archiveArtifacts artifacts: 'image.properties'

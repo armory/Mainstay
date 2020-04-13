@@ -7,7 +7,7 @@ import json
 import time
 import random
 
-
+# method that helps us simulate cpu load
 def get_shell_script_output_using_check_output(cpu, cpuLoad, io, mem, memSize, timeout):
     stress_ng = "stress-ng"
     if cpu != None:

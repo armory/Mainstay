@@ -40,7 +40,7 @@ def index():
 
 @app.route('/test')
 def test():
-    return "This is the test,!!!!"
+    return "This is the test!!!!"
 
 @app.route('/db')
 def dbWork():

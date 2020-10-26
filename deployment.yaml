@@ -16,7 +16,7 @@ spec:
         app: flask-app
     spec:
       containers:
-        - image: 'cremerfc/flask-app:${trigger["buildInfo"]["number"]}'
+        - image: 'cremerfc/flask-app'
           name: flask-app
           ports:
             - containerPort: 5000

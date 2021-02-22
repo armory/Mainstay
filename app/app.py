@@ -35,7 +35,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    return "Today"
+    return "This is a Demo"
 
 
 @app.route('/test')

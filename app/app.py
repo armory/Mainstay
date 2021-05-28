@@ -35,7 +35,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
 
-    return "Test Change"
+    return "New Home Page"
 
 
 @app.route('/test')
